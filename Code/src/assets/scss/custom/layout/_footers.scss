@@ -1,0 +1,44 @@
+/** ===========================================================================
+ *
+ * 6. Footers
+ *
+ * 6.1 Main.
+ * 6.2 Secondary.
+ *
+ * ========================================================================= */
+
+/** ---------------------------------------------------------------------------
+ * 6.1 Main.
+ * ------------------------------------------------------------------------- */
+.ap-footer {
+    background-color: $ap-black-85;
+    border-top: 4px solid $ap-black-85;
+
+    @include breakpoint(medium down) {
+        text-align: center;
+
+        .ap-footer-links,
+        #ap-social-icons {
+            justify-content: center;
+        }
+    }
+
+    @include breakpoint(small only) {
+        .ap-footer-links {
+            flex-direction: column;
+        }            
+    }
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 6.2 Secondary.
+ * ------------------------------------------------------------------------- */
+.ap-footer-secondary {
+    background-color: $ap-black-85;
+
+    @include breakpoint(medium down) {
+        padding: 1rem 0;        
+    }
+}

@@ -1,0 +1,538 @@
+/** ===========================================================================
+ *
+ * 1. Typography
+ * 
+ * 1.1 Body.
+ * 1.2 Paragraphs and lists.
+ * 1.3 Links.
+ * 1.4 Headings.
+ * 1.5 Badges.
+ * 1.6 Code.
+ * 1.7 Captions.
+ * 1.8 Other.
+ *
+ * ========================================================================= */
+
+/** ---------------------------------------------------------------------------
+ * 1.1 Body.
+ * ------------------------------------------------------------------------- */
+body {
+    color: $ap-black-65;
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 1.2 Paragraphs and lists.
+ * ------------------------------------------------------------------------- */
+p {
+    .ap-additional-nav & {
+        margin: 0;
+    }    
+
+    .ap-footer-secondary & {
+        color: $ap-white-75;
+        margin-bottom: 0;
+    }
+
+    .callout.warning & {
+        color: $ap-tertiary-2;
+    }
+
+    .callout.primary & {
+        color: $ap-tertiary-1;
+    }
+}
+
+p,
+ol,
+ul {
+    .ap-section-content & {
+        margin-bottom: 2rem;
+        max-width: 43rem;    
+    }
+}
+
+ol {
+    .ap-section-content & {
+        counter-reset: item;
+        margin-left: 0;
+
+        li {
+            display: block;
+
+            &:before {
+                content: counter(item) ". ";
+                counter-increment: item;
+                font-weight: bold;        
+            }
+        }
+    }    
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 1.3 Links.
+ * ------------------------------------------------------------------------- */
+a {
+    color: $ap-primary;
+    font-weight: bold;
+    position: relative;
+    
+    @include ap-transition();
+
+    &:hover {
+        color: $ap-black-85;
+    }
+
+    // Link arrow.
+    &.ap-link-arrow {
+        display: inline-block;
+        width: 100%;
+        padding: 1rem 2rem 1rem 0;
+        border-bottom: 1px solid $ap-black-05;
+    
+        &:after {
+            content: '\f10b';
+            right: 0;
+    
+            @extend .ap-center-v;
+            @extend .ap-ionicons;
+        }
+    }    
+    
+    // Menu links.
+    .ap-menu & {
+        color: $ap-black-85;
+        white-space: normal;
+        line-height: 1.25rem;
+        display: inline-block;
+
+        @extend .ap-small-text;
+        
+        &:hover {
+            color: $ap-secondary;
+
+            &:after,
+            &:before {
+                color: inherit;
+            }
+        }
+    }
+
+    .ap-menu li.is-active > & {
+        color: $ap-secondary;
+    }
+
+    // Drilldown menu links.
+    .drilldown li &,
+    .drilldown .is-drilldown-submenu & {
+        width: 100%;
+        padding: 1rem 4rem 1rem 2rem;
+        border-bottom: 1px solid $ap-black-05;            
+    }
+
+    .drilldown .is-drilldown-submenu-parent > &:after,
+    .drilldown .js-drilldown-back > &:before {
+        @extend .ap-super-small-text;
+        @extend .ap-ionicons;
+    }
+
+    .drilldown .is-drilldown-submenu-parent > &:after {
+        content: '\f125';
+        right: 2rem;
+
+        @extend .ap-center-v;
+    }
+
+    .drilldown .js-drilldown-back > &:before {
+        content: '\f124';
+        margin-top: -2px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 0.75rem;
+    }
+
+    // Top bar and footer links.
+    .top-bar ul & {
+        height: 5rem;
+        line-height: 5rem;
+        padding: 0;
+        margin: 0 1.5rem;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 4px;
+            bottom: 0;
+            position: absolute;
+            background: $ap-secondary;
+
+            @include ap-transition(width);
+        }
+
+        &:hover:after {
+            width: 100%;
+        }
+
+        &:hover {
+            color: $ap-secondary;
+        }
+    }
+
+    .top-bar li.is-active &:after {
+        width: 100%;
+    }
+
+    .ap-footer-links li & {
+        padding: 2rem 0;
+    }
+
+    .top-bar &,
+    .ap-footer & {
+        color: $ap-white;
+
+        &:hover {
+            color: $ap-secondary;
+        }
+    }
+
+    // Icon button.
+    &.ap-button-icon {
+        height: 4rem;
+        width: 4rem;
+        font-size: 1.5rem;
+    
+        &.ap-small {
+            height: 3rem;
+            width: 3rem;
+        }
+        
+        i {
+            @extend .ap-center-both;
+        }
+    }
+
+    // Accordion links.
+    .accordion-menu .is-accordion-submenu-parent > &:before  {
+        content: '\f123';
+        left: 0;
+
+        @extend .ap-super-small-text;
+        @extend .ap-ionicons;
+        @extend .ap-center-v;
+    }
+
+    .accordion-menu .is-accordion-submenu-parent[aria-expanded='true'] > &:before {
+        content: '\f126';
+    }         
+    
+    .accordion-menu .submenu & {
+        font-weight: normal;
+        color: $ap-black-65;
+
+        &:hover {
+            color: $ap-secondary;
+        }
+    }
+
+    // Detailed link.
+    &.ap-detailed-link {
+        border: 1px solid $ap-black-12;
+        padding: 1rem 4rem 1rem 1rem;
+        color: $ap-black-85;
+        display: inline-block;
+        margin-bottom: 2rem;
+        max-width: 100%;
+        font-weight: normal;
+
+        @extend .ap-small-text;
+        @include ap-round();
+        
+        &:hover {
+            border-color: $ap-black-50;
+        }
+    
+        &:before {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            content: attr(href);
+            color: $ap-primary;
+            font-weight: bold;
+            display: block;
+        }
+    
+        &:after {
+            content: '\f125';
+            right: 2rem;
+    
+            @extend .ap-super-small-text;
+            @extend .ap-center-v;
+            @extend .ap-ionicons;
+        }
+    }
+
+    // Page nav links.
+    &.ap-page-nav-link {
+        width: auto;
+        padding: 0 1rem 0 0;
+        border-bottom: none;
+        margin-top: 2rem;
+    
+        &:before {
+            position: absolute;
+            top: -2rem;
+    
+            @extend h6;
+        }
+        
+        &.ap-next {
+            &:before {
+                content: 'Next';
+            }
+        }
+    
+        &.ap-prev {
+            padding: 0 0 0 1rem;
+    
+            &:before {
+                content: 'Previous';
+                right: 0;
+            }
+    
+            &:after {
+                content: '\f108';
+                left: 0;
+                right: auto;
+            }
+        }
+
+        @include breakpoint(small only) {
+            font-size: $small-font-size;
+        }
+    }
+
+    // Magellan nav links.
+    .ap-magellan-nav & {
+        color: $ap-black-85;
+        font-weight: normal;
+
+        &.is-active,
+        &:hover {
+            color: $ap-secondary;
+        }
+
+        &.is-active {
+            &:before {
+                content: '\f3d6';
+                font-size: 1rem;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 0.5rem;
+
+                @extend .ap-ionicons;
+            }
+        }
+    }
+
+    // Vertical menu.
+    .ap-vertical-menu & {
+        padding: 0.5rem 0;
+        display: block;
+
+        @extend .ap-small-text;
+    }        
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 1.4 Headings.
+ * ------------------------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 900;
+    color: $ap-black-85;
+}
+
+h3 span {
+    font-family: $body-font-family;
+    font-size: 1rem;
+    font-weight: normal;
+    margin-left: 0.25rem;
+
+    @extend .ap-muted;
+
+    @include breakpoint(small only) {
+        margin-left: 0;
+        margin-top: 0.5rem;
+        display: block;        
+    }
+}
+
+h4.ap-hash-heading,
+h5,
+h6 {
+    margin-bottom: 1.75rem;    
+}
+
+h5,
+h6 {
+    font-weight: 700;
+    color: $ap-black-85;
+}
+
+h5 {
+    .ap-section-content & {
+        color: $ap-black-65;        
+    }
+}
+
+h6 {
+    letter-spacing: 1px;
+    color: $ap-black-50;
+    text-transform: uppercase;
+}
+
+.ap-hash-heading,
+.ap-section-header h2,
+.ap-section-header h3,
+.ap-section-header h4,
+.ap-section-header h5, {
+    position: relative;
+
+    &:before {
+        font-size: 1.25rem;
+        color: $ap-black-12;
+        left: -4rem;
+        width: 3rem;
+        display: block;
+        text-align: right;
+
+        @extend .ap-center-v;
+
+        @include breakpoint(medium down) {
+            display: none;
+        }
+    }
+}
+
+.ap-section-header h2:before,
+h2.ap-hash-heading:before {
+    content: '#';
+}
+
+.ap-section-header h3:before,
+h3.ap-hash-heading:before {
+    content: '##';
+}
+
+.ap-section-header h4:before,
+h4.ap-hash-heading:before {
+    content: '###';
+}
+
+.ap-section-header h5:before,
+h5.ap-hash-heading:before {
+    content: '####';
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 1.5 Badges.
+ * ------------------------------------------------------------------------- */
+.ap-badge {
+    padding: 0.65rem 1rem 0.5rem;
+    display: inline-block;
+    color: $ap-white;
+    line-height: 0.65rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    
+    @extend .ap-super-small-text;
+    @include ap-round();
+
+    &.ap-code {
+        background-color: $ap-tertiary-1;
+        padding: 0.75rem 0;
+        text-align: center;
+        width: 2.25rem;
+        font-size: 1rem;
+    }
+
+    &.ap-bug-fixes {
+        background-color: $ap-tertiary-4;
+    }
+
+    &.ap-enhancements {
+        background-color: $ap-tertiary-1;
+    }
+
+    &.ap-new {
+        background-color: $ap-tertiary-3;
+    }
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 1.6 Code.
+ * ------------------------------------------------------------------------- */
+code {
+    @extend .ap-small-text;
+    @include ap-round();
+}
+
+.ap-code-block {
+    position: relative;
+
+    pre[class*="language-"] {
+        margin: 0;
+        
+        @include ap-round();
+    }
+
+    &:before {
+        position: absolute;
+        content: "\f271";
+        top: 0;
+        left: -3.25rem;
+
+        @extend .ap-ionicons;
+        @extend .ap-badge;
+        @extend .ap-code;
+
+        @include breakpoint(medium down) {
+            display: none;
+        }
+    }
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 1.7 Captions.
+ * ------------------------------------------------------------------------- */
+figcaption {
+    font-style: italic;
+    margin-top: 1rem;
+
+    @extend .ap-muted;
+    @extend .ap-small-text;
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 1.8 Other.
+ * ------------------------------------------------------------------------- */
+.ap-muted {
+    color: $ap-black-50;
+}

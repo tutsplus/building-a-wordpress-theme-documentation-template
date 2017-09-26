@@ -1,0 +1,26 @@
+/** ===========================================================================
+ *
+ * 10. Buttons
+ *
+ * ========================================================================= */
+
+.ap-button {
+    border: 1px solid $ap-primary;
+    padding: 0.75rem 3.5rem 0.75rem 2rem;
+
+    @extend .ap-small-text;
+    @include ap-round(10rem);
+
+    &:after {
+        content: '\f10b';
+        right: 0;
+        margin-right: 2rem;
+
+        @extend .ap-center-v;
+        @extend .ap-ionicons;
+    }
+
+    &:hover {
+        border-color: $ap-black-85;
+    }
+}

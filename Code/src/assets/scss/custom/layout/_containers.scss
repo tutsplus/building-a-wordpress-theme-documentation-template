@@ -1,0 +1,119 @@
+/** ===========================================================================
+ *
+ * 5. Containers
+ *
+ * 5.1 Main.
+ * 5.2 Page and article content.
+ * 5.3 Section content.
+ * 5.4 Wells.
+ *
+ * ========================================================================= */
+
+/** ---------------------------------------------------------------------------
+ * 5.1 Main.
+ * ------------------------------------------------------------------------- */
+.ap-container {
+    width: 100%;
+    padding: 0 4rem;
+
+    @include breakpoint(small only) {
+        padding: 0 2rem;
+    }
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 5.2 Page and article content.
+ * ------------------------------------------------------------------------- */
+.ap-page-content,
+.ap-article-content {
+    border: 1px solid $ap-black-12;
+    padding-top: 4rem;
+}
+
+.ap-page-content {
+    border-width: 0 1px 0 0;
+
+    .ap-section-content,
+    .ap-section-header {
+        padding-left: 7.5rem;
+        padding-right: 7.5rem;
+
+        @include breakpoint(medium down) {
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }    
+
+        @include breakpoint(small only) {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }    
+    }
+}
+
+.ap-article-content {
+    border-width: 0 1px;
+
+    @include breakpoint(medium down) {
+        .ap-section-content,
+        .ap-section-header {
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+    }    
+
+    @include breakpoint(small only) {
+        .ap-section-content,
+        .ap-section-header {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+    }    
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 5.3 Section content.
+ * ------------------------------------------------------------------------- */
+.ap-section-content {
+    padding: 0 5rem 6rem 5rem;
+    
+    figure,
+    #ap-file-structure,
+    table,
+    .callout {
+        margin-bottom: 4rem;
+
+        @include breakpoint(small only) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    @include breakpoint(small only) {
+        padding-bottom: 3rem;        
+    }
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 5.4 Wells.
+ * ------------------------------------------------------------------------- */
+.ap-well-light {
+    background-color: $ap-black-05;
+}
+
+.ap-well-light-border {
+    @extend .ap-well-light;
+    @include ap-round();
+
+    padding: 2rem;
+    border: 1px solid $ap-black-05;
+
+    > ul,
+    > ol {
+        margin-bottom: 0;
+    }
+}

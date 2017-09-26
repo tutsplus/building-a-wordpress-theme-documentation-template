@@ -1,0 +1,44 @@
+// ============================================================================
+// Custom utilities.
+// ============================================================================
+
+// Ionicons classes.
+.ap-ionicons {
+    font-family: 'Ionicons';
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+// Vertical centering.
+.ap-center-v {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);    
+}
+
+// Vertical & horizontal centering
+.ap-center-both {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+}
+
+// Small text.
+.ap-small-text {
+    font-size: $small-font-size;
+}
+
+.ap-super-small-text {
+    font-size: $super-small-font-size;
+}
+
+// Rounded corners.
+@mixin ap-round($radius: $global-radius) {
+    border-radius: $radius;
+}
+
+// Transitions.
+@mixin ap-transition($property: all, $duration: 200ms, $easing: ease-in-out) {
+    transition: $property $duration $easing;
+}

@@ -1,0 +1,126 @@
+---
+layout: page
+page-title: F.A.Q.
+page-domain: faq
+---
+
+<section>
+    <header class="ap-section-header">
+        <h2>{{ page-title }}</h2>
+    </header>
+
+    <div class="ap-section-content">
+        <p>The most commonly asked questions about Avalanche can be found here. If you can’t find your question in this page try finding the answer in the documentation and if that still doesn’t answer your question please visit the support forums or open a support ticket.</p>
+
+        {{> nav-internal}}
+    </div> <!-- end .ap-section-content -->
+</section>
+
+<section id="faq-q1" data-magellan-target="faq-q1">
+    <header class="ap-section-header">
+        <h3>How do I install the theme?</h3>
+    </header>
+
+    <div class="ap-section-content">
+        <p>Theme installation is covered in detail in the documentation. Follow the link below to visit that page.</p>
+
+        <nav>
+            <a href="{{root}}documentation/theme-customization/" class="ap-detailed-link">Installing the theme</a>
+        </nav>
+    </div> <!-- end .ap-section-content -->
+</section>
+
+<section id="faq-q2" data-magellan-target="faq-q2">
+    <header class="ap-section-header">
+        <h3>How do I change the colors and fonts?</h3>
+    </header>
+
+    <div class="ap-section-content">
+        <p>Changing the colors and fonts is done the easiest from the WordPress customizer. The documentation has a dedicated section for using the Customizer.</p>
+
+        <nav>
+            <a href="{{root}}documentation/theme-customization/" class="ap-detailed-link">Working with the WordPress Customizer</a>
+        </nav>
+
+        <p>Alternatively, you can modify the source Sass files and create your own colors and styles for the elements you want to change. For that, see the appropriate section in the documentation.</p>
+
+        <nav>
+            <a href="{{root}}documentation/theme-customization/" class="ap-detailed-link">Changing the fonts and colors</a>
+        </nav>
+    </div> <!-- end .ap-section-content -->
+</section>
+
+<section id="faq-q3" data-magellan-target="faq-q3">
+    <header class="ap-section-header">
+        <h3>How do I show a different sidebar in my homepage?</h3>
+    </header>
+
+    <div class="ap-section-content">
+        <p>Each page template has a hard-coded sidebar location and name. If you wish to change this, you need to modify the appropriate page template and add your own sidebar.</p>
+        <p>In the case of the homepage, do the following:</p>
+
+        <h4 class="ap-hash-heading">Step 1. Open page-homepage.php</h4>
+        <p>The file is located in the root theme folder (Fig. 1).</p>
+        <figure>
+            <img src="{{root}}assets/img/screenshots/screenshot-01.jpg" alt="Screenshot" />
+            <figcaption>Fig. 1) The location of page-homepage.php.</figcaption>
+        </figure>
+
+        <h4 class="ap-hash-heading">Step 2. Find line 142</h4>
+        <p>Find the code located at line #142:</p>
+        <figure class="ap-code-block">
+            <pre>
+                <code class="language-html">
+                    &#x3C;div class=&#x22;ap-container&#x22;&#x3E;
+                        &#x3C;ul class=&#x22;no-bullet ap-inline ap-divided&#x22;&#x3E;
+                            &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;Follow me on ThemeForest&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+                            &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;View theme demo&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+                            &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;Purchase Avalanche&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+                        &#x3C;/ul&#x3E;
+                    &#x3C;/div&#x3E; &#x3C;!-- end .ap-container --&#x3E;
+                </code>
+            </pre>
+        </figure>
+
+        <p>Replace that with the following code and save the file:</p>
+        <figure class="ap-code-block">
+            <pre>
+                <code class="language-css">
+                    .ap-code {
+                        background-color: black;
+                        padding: 0.25rem 0;
+                        text-align: center;
+                        width: 2.25rem;
+                    }
+                </code>
+            </pre>
+        </figure>
+
+        <h4 class="ap-hash-heading">Step 3. Upload the changed file (optional)</h4>
+        <p>If your WordPress website is live and what you’ve just edited was a local file, you need to upload this again to the server for the changes to take effect. Please see the appropriate section on the documentation if you’re having problems doing that.</p>
+
+        <div class="callout warning">
+            <p>Making changes to a .php file might cause problems. Always make sure you test first before deploying those changes to a live site. Also, make sure you always backup your WordPress site.</p>
+        </div> <!-- end .callout -->
+    </div> <!-- end .ap-section-content -->
+</section>
+
+<section id="faq-q4" data-magellan-target="faq-q4">
+    <header class="ap-section-header">
+        <h3>How do I change the footer copyright text?</h3>
+    </header>
+
+    <div class="ap-section-content">
+        <p>To edit the footer, follow the next steps:</p>
+
+        <ol>
+            <li>Locate and open footer.php.</li>
+            <li>Make the necessary changes and save the file.</li>
+            <li>If you’re working on a copy of the file go ahead and upload it to your live server. Otherwise, if working locally, the changes will be visible after a page refresh.</li>
+        </ol>
+
+        <div class="callout warning">
+            <p>Making changes to a .php file might cause problems. Always make sure you test first before deploying those changes to a live site. Also, make sure you always backup your WordPress site.</p>
+        </div> <!-- end .callout -->
+    </div> <!-- end .ap-section-content -->
+</section>

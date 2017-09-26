@@ -1,0 +1,12 @@
+<li {{#ifequal page-domain 'start'}} class="is-active" {{/ifequal}}><a href="{{root}}index.html">Start</a></li>
+<li {{#ifequal page-domain 'documentation'}} class="is-active" {{/ifequal}}>
+    <a href="{{root}}documentation/introduction.html">Documentation</a>
+    <ul class="vertical menu hide-for-large">
+        {{> nav-items-documentation}}
+    </ul>
+</li>
+<li {{#ifequal page-domain 'support'}} class="is-active" {{/ifequal}}><a href="{{root}}support.html">Support</a></li>
+<li {{#ifequal page-domain 'faq'}} class="is-active" {{/ifequal}}><a href="{{root}}faq.html">F.A.Q.</a></li>
+<li {{#ifequal page-domain 'changelog'}} class="is-active" {{/ifequal}}><a href="{{root}}changelog.html">Changelog</a></li>
+<li {{#ifequal page-domain 'credits'}} class="is-active" {{/ifequal}}><a href="#">Credits</a></li>
+<li {{#ifequal page-domain 'contact'}} class="is-active" {{/ifequal}}><a href="#">Get in touch</a></li>

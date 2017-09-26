@@ -1,0 +1,120 @@
+// ============================================================================
+// Custom settings.
+// ============================================================================
+
+// Colors.
+$foundation-palette: (
+	primary: #1779ba,
+    secondary: #767676,
+    success: #3adb76,
+    warning: #ffae00,
+    alert: #cc4b37,
+    // Custom colors.
+    ap-black: #0B1521,
+    ap-black-85: rgba(11, 21, 33, 0.85),
+    ap-black-65: rgba(11, 21, 33, 0.65),
+    ap-black-50: rgba(11, 21, 33, 0.50),
+    ap-black-12: rgba(11, 21, 33, 0.12),
+    ap-black-05: rgba(11, 21, 33, 0.05),
+    ap-white: #fff,
+    ap-white-75: rgba(255, 255, 255, 0.75),
+    ap-white-15: rgba(255, 255, 255, 0.15),
+    ap-primary: #D0793F,
+    ap-secondary: #93CDCF,
+    ap-tertiary-1: #4C77A9,
+    ap-tertiary-1-10: rgba(76, 119, 169, 0.10),
+    ap-tertiary-2: #A9794C,
+    ap-tertiary-2-10: rgba(169, 121, 76, 0.10),
+    ap-tertiary-3: #9DBD77,
+    ap-tertiary-4: #E15F6F
+);
+
+$ap-black: get-color('ap-black');
+$ap-black-85: get-color('ap-black-85');
+$ap-black-65: get-color('ap-black-65');
+$ap-black-50: get-color('ap-black-50');
+$ap-black-12: get-color('ap-black-12');
+$ap-black-05: get-color('ap-black-05');
+$ap-white: get-color('ap-white');
+$ap-white-75: get-color('ap-white-75');
+$ap-white-15: get-color('ap-white-15');
+$ap-primary: get-color('ap-primary');
+$ap-secondary: get-color('ap-secondary');
+$ap-tertiary-1: get-color('ap-tertiary-1');
+$ap-tertiary-1-10: get-color('ap-tertiary-1-10');
+$ap-tertiary-2: get-color('ap-tertiary-2');
+$ap-tertiary-2-10: get-color('ap-tertiary-2-10');
+$ap-tertiary-3: get-color('ap-tertiary-3');
+$ap-tertiary-4: get-color('ap-tertiary-4');
+
+// Typography.
+$body-font-family: 'PT Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$header-font-family: 'Muli', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$header-margin-bottom: 1rem;
+$paragraph-lineheight: 1.5;
+$small-font-size: 0.88rem;
+$super-small-font-size: 0.65rem;
+$code-border: none;
+
+$header-styles: (
+    small: (
+    	'h1': ('font-size': 38),
+    	'h2': ('font-size': 38),
+    	'h3': ('font-size': 28),
+    	'h4': ('font-size': 21),
+    	'h5': ('font-size': 16),
+    	'h6': ('font-size': 12),
+    ),
+    medium: (
+    	'h1': ('font-size': 50),
+    	'h2': ('font-size': 38),
+    	'h3': ('font-size': 28),
+    	'h4': ('font-size': 21),
+    	'h5': ('font-size': 16),
+    	'h6': ('font-size': 12),
+    ),
+);
+
+// Other.
+$global-radius: 3px;
+
+// Top bar.
+$topbar-padding: 0;
+$topbar-background: $ap-black-85;
+
+// Menu.
+$menu-simple-margin: 0;
+$menu-item-color-active: $ap-secondary;
+$menu-item-background-active: transparent;
+
+// HR.
+$hr-width: 100%;
+$hr-border: 8px solid $ap-black-05;
+$hr-margin: 6rem auto;
+
+// Off-canvas.
+$offcanvas-background: $ap-white;
+$offcanvas-inner-shadow-size: 0;
+$offcanvas-exit-background: $ap-black-50;
+
+// XY Grid.
+$grid-padding-gutters: (
+    small: 2rem,
+    medium: 2rem
+);
+
+// Drilldown menu.
+$drilldown-arrows: false;
+
+// Accordion menu.
+$accordionmenu-arrows: false;
+$accordionmenu-padding: 1rem 1.25rem;
+$accordionmenu-submenu-padding: 0.5rem 1.25rem;
+
+// Callout.
+$callout-border: none;
+$callout-padding: 1rem 2rem;
+$callout-radius: $global-radius;
+
+// Breakpoints.
+$breakpoint-classes: (small medium large xlarge xxlarge);

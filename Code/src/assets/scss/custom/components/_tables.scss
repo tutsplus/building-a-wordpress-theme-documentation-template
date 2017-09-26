@@ -1,0 +1,98 @@
+/** ===========================================================================
+ *
+ * 9. Tables
+ *
+ * ========================================================================= */
+
+.ap-table {
+    @include breakpoint(small only) {
+        // https://css-tricks.com/responsive-data-tables/
+        display: block;
+
+        thead, tbody, th, td, tr { 
+            display: block;
+            text-align: left;
+        }
+    
+        thead tr { 
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+        &#ap-table-file-structure tbody td {
+            &:nth-of-type(1):before { content: "Item"; }
+            &:nth-of-type(2):before { content: "Description"; }
+        }    
+
+        &#ap-table-support-coverage tbody td {
+            &:nth-of-type(1):before { content: "Description"; }
+            &:nth-of-type(2):before { content: "Coverage"; }
+        }    
+
+        &#ap-table-support-team-schedule tbody td {
+            &:nth-of-type(1):before { content: "Team member"; }
+            &:nth-of-type(2):before { content: "Location"; }
+            &:nth-of-type(3):before { content: "Availability"; }
+        }    
+    }
+
+    thead {
+        color: $ap-black-85;
+        background-color: $ap-white;
+        border: none;
+        border-bottom: 4px solid $ap-black-05;
+
+        th {
+            padding: 1rem 2rem;
+        }
+    }
+
+    tbody {
+        border: none;
+
+        @extend .ap-small-text;
+
+        td {
+            padding: 1rem 2rem;
+            vertical-align: top;
+
+            i.ion-checkmark {
+                color: $ap-tertiary-3;
+            }
+
+            i.ion-close-round {
+                color: $ap-tertiary-4;
+            }
+        
+            @include breakpoint(small only) {
+                position: relative;
+                word-wrap: break-word;
+                padding-left: 40%;
+    
+                &+td {
+                    padding-top: 0;
+                }
+                
+                &:before {
+                    position: absolute;
+                    left: 0;
+                    width: 35%; 
+                    white-space: nowrap; 
+                    font-weight: bold;
+                    color: $ap-black-85;
+                }                    
+            }
+        }
+
+        tr {
+            &:nth-child(even) {
+                background-color: $ap-black-05;
+            }
+
+            @include breakpoint(small only) {
+                padding-left: 1rem;                
+            }
+        }
+    }
+}

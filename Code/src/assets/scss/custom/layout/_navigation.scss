@@ -1,0 +1,108 @@
+/** ===========================================================================
+ *
+ * 2. Navigation
+ *
+ * 2.1 Vertical menu.
+ * 2.2 Top bar.
+ * 2.3 Off-canvas.
+ * 2.4 Additional nav.
+ * 2.5 Accordion menu.
+ * 2.6 Page nav.
+ *
+ * ========================================================================= */
+
+/** ---------------------------------------------------------------------------
+ * 2.1 Vertical menu.
+ * ------------------------------------------------------------------------- */
+#ap-vertical-menu-toc {
+    border-left: 4px solid $ap-black-05;
+    padding-left: 1rem;    
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 2.2 Top bar.
+ * ------------------------------------------------------------------------- */
+.top-bar {
+    padding: 0 4rem;
+
+    ul {
+        background-color: transparent;
+    }
+
+    @include breakpoint(medium down) {
+        padding: 1rem;        
+
+        .top-bar-right {
+            display: none;
+        }
+    
+        .top-bar-left {
+            width: 100%;
+            text-align: center;
+            display: flex;
+        }
+
+        #ap-top-logo,
+        .ap-hamburger-container,
+        .ap-flex-filler {
+            flex: 1;
+            display: flex;
+        }
+    
+        #ap-top-logo {
+            justify-content: center;
+        }
+    }
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 2.3 Off-canvas.
+ * ------------------------------------------------------------------------- */
+
+.off-canvas {
+    padding-top: 5rem;
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 2.4 Additional nav.
+ * ------------------------------------------------------------------------- */
+.ap-additional-nav {
+    padding: 1rem 0;
+    border-bottom: 4px solid $ap-black-05;
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 2.5 Accordion menu.
+ * ------------------------------------------------------------------------- */
+ .accordion-menu .submenu {
+    margin-left: 1rem;
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 2.6 Page nav.
+ * ------------------------------------------------------------------------- */
+.ap-page-nav-container {
+    border-top: 1px solid $ap-black-12;
+
+    .cell {
+        padding: 4rem 2rem;
+
+        &:first-child {
+            border-right: 1px solid $ap-black-12;
+        }
+
+        @include breakpoint(small only) {
+            padding: 2rem;
+        }
+    }
+}

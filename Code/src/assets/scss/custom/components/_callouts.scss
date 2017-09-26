@@ -1,0 +1,22 @@
+/** ===========================================================================
+ *
+ * 11. Callouts
+ *
+ * ========================================================================= */
+
+.callout {
+    box-shadow: inset 0 0 0 1px $ap-black-05;
+    border-left: 4px solid;
+
+    @extend .ap-small-text;
+
+    &.warning {        
+        background-color: $ap-tertiary-2-10;
+        border-color: $ap-tertiary-2;
+    }
+
+    &.primary {        
+        background-color: $ap-tertiary-1-10;
+        border-color: $ap-tertiary-1;
+    }
+}

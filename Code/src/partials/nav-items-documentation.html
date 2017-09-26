@@ -1,0 +1,38 @@
+<li {{#ifequal doc-domain 'introduction'}} class="is-active" {{/ifequal}}><a href="{{root}}documentation/introduction.html">Introduction</a></li>
+<li {{#ifequal doc-domain 'getting-started'}} class="is-active" {{/ifequal}}>
+    <a href="#">Getting Started</a>
+    <ul class="vertical menu">
+        <li><a href="#">Preparation</a></li>
+        <li><a href="#">Installing WordPress</a></li>
+        <li><a href="#">Version Compatibility</a></li>
+        <li {{#ifpage 'installing-avalanche'}} class="is-active" {{/ifpage}}><a href="{{root}}documentation/getting-started/installing-avalanche.html">Installing Avalanche</a></li>
+        <li><a href="#">Installing the Required Plugins</a></li>
+    </ul>
+</li>
+<li>
+    <a href="#">Pages and Posts</a>
+    <ul class="vertical menu">
+        <li><a href="#">Adding and Managing Pages</a></li>
+        <li><a href="#">Adding and Managing Blog Posts</a></li>
+    </ul>
+</li>
+<li>
+    <a href="#">Menus, Sidebars and Widgets</a>
+    <ul class="vertical menu">
+        <li><a href="#">Adding and Managing Menus</a></li>
+        <li><a href="#">Managing Sidebars</a></li>
+        <li><a href="#">Adding and Managing Widgets</a></li>
+        <li><a href="#">Custom Widgets</a></li>
+    </ul>
+</li>
+<li><a href="#">Shortcodes</a></li>
+<li><a href="#">Plugins</a></li>
+<li>
+    <a href="#">Theme Customization</a>
+    <ul class="vertical menu">
+        <li><a href="#">Setting the Home and Blog Pages</a></li>
+        <li><a href="#">Working with the WordPress Customizer</a></li>
+        <li><a href="#">Changing the Fonts and Colors</a></li>
+    </ul>
+</li>
+<li><a href="#">Importing Demo Data</a></li>

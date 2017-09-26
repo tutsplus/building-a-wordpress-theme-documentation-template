@@ -1,0 +1,38 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Documentation template for WordPress themes - {{page-title}}</title>
+		{{> global-css}}
+	</head>
+	<body>
+		<div class="off-canvas-wrapper">
+			<div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+				{{> nav-offcanvas}}
+			</div> <!-- end .off-canvas -->
+			<div class="off-canvas-content" id="top" data-off-canvas-content data-magellan-target="top">
+				<header>
+					{{> top-bar}}
+					{{> info-bar}}
+				</header>
+
+				<div class="grid-x">
+					<article class="cell auto ap-page-content" id="ap-page-content">
+						{{> body}}
+					</article> <!-- end .cell -->
+					<aside class="cell hide-for-small show-for-large ap-sidebar-right" data-sticky-container>
+						<div class="sticky" data-sticky data-anchor="ap-page-content" data-margin-top="4">
+							{{> widget-nav}} 
+						</div> <!-- end .sticky -->
+					</aside> <!-- end .cell -->
+				</div> <!-- end .grid-x -->
+
+				{{> footer}}	
+			</div> <!-- end .off-canvas-content -->
+		</div> <!-- end .off-canvas-wrapper -->
+
+		{{> global-js}}
+	</body>
+</html>
